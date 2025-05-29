@@ -37,6 +37,8 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs_rainbow',
 
   require 'kickstart.plugins.minimap',
+
+  require 'kickstart.plugins.golang',
 }, {
   ui = {
 

@@ -57,6 +57,24 @@ require 'kickstart.lazy_bootstrap'
 -- ---- Configurar e instalar plugins ---- ||
 require 'kickstart.lazy_plugins'
 
+------------------------------------------------------ nvim-go
+
+local NvimGo = vim.api.nvim_create_augroup('NvimGo', {
+  clear = true,
+})
+vim.api.nvim_create_autocmd({ 'User' }, {
+  pattern = 'NvimGoLintPopupPost',
+  group = NvimGo,
+  command = 'wincmd p',
+})
+
+-------------------------------- disable some default providers
+
+for _, provider in ipairs { 'node', 'perl', 'python3', 'ruby' } do
+  vim.g['loaded_' .. provider .. '_provider'] = 0
+end
+
+--------------------------------------------------------------|
 --
 --
 -- ------------------------------------------------------------- ||

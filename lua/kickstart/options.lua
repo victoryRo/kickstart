@@ -58,7 +58,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.o.inccommand = 'split'
 
 -- Muestra en qué línea se encuentra el cursor
-vim.o.cursorline = true
+vim.o.cursorline = false
 
 -- Número mínimo de líneas de pantalla para mantener por encima y por debajo del cursor.
 vim.o.scrolloff = 10

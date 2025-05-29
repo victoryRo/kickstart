@@ -25,12 +25,12 @@ return {
           -- `friendly-snippets` contiene una variedad de fragmentos prediseñados.
           -- Consulte el archivo README para obtener información sobre fragmentos language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
         opts = {},
       },
@@ -76,7 +76,7 @@ return {
       completion = {
         -- De forma predeterminada, puede presionar `<c-space>` para mostrar la documentación.
         -- Opcionalmente, configure `auto_show = true` para mostrar la documentación después de un retraso.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        documentation = { auto_show = true, auto_show_delay_ms = 500 },
       },
 
       sources = {
