@@ -17,6 +17,7 @@ return {
       },
     },
   },
+
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -82,11 +83,11 @@ return {
 
           -- Cambie el nombre de la variable bajo el cursor.
           -- La mayoría de los servidores de idiomas admiten el cambio de nombre entre archivos, etc.
-          map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>lr', vim.lsp.buf.rename, '[R]e[n]ame')
 
           -- Ejecutar una acción de código; normalmente,
           -- el cursor debe estar sobre un error o una sugerencia de su LSP para que esto se active.
-          map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
+          map('<leader>la', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
 
           -- Encuentre referencias para la palabra bajo el cursor.
           map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -98,7 +99,7 @@ return {
           -- Salta a la definición de la palabra bajo el cursor.
           -- Aquí es donde se declaró por primera vez una variable, o donde se definió una función, etc.
           -- Para retroceder, presione <C-t>.
-          map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('<leader>ld', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
           -- WARN: Esto no es Goto Definición, es Goto Declaración.
           -- Por ejemplo, en C, esto te llevaría al encabezado.
@@ -110,7 +111,7 @@ return {
 
           -- Búsqueda difusa de todos los símbolos en su espacio de trabajo actual.
           -- Similar a los símbolos de documento, excepto que busca en todo el proyecto.
-          map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+          map('<leader>ls', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
 
           -- Salta al tipo de la palabra bajo el cursor.
           -- Útil cuando no estás seguro de qué tipo es una variable

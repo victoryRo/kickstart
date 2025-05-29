@@ -28,6 +28,14 @@ vim.keymap.set('n', '<leader>2', ':vertical resize -8<cr>', { desc = 'Mover divi
 vim.keymap.set('n', '<leader>3', ':resize +5<cr>', { desc = 'Mover división arriba' })
 vim.keymap.set('n', '<leader>4', ':resize -5<cr>', { desc = 'Mover división abajo' })
 
+-- GO PREVIEW
+vim.keymap.set('n', 'ld', "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { desc = 'LSP definition' })
+vim.keymap.set('n', 'lt', "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", { desc = 'LSP type definition' })
+vim.keymap.set('n', 'li', "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", { desc = 'LSP implementation' })
+vim.keymap.set('n', 'lc', "<cmd>lua require('goto-preview').close_all_win()<CR>", { desc = 'close preview' })
+vim.keymap.set('n', 'lr', "<cmd>lua require('goto-preview').goto_preview_references()<CR>", { desc = 'LSP references' })
+vim.keymap.set('n', 'lp', "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>", { desc = 'LSP declaration' })
+
 -- Diagnostico Mapas de teclas
 vim.keymap.set('n', '<leader>i', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 

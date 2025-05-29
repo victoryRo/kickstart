@@ -39,6 +39,12 @@ require('lazy').setup({
   require 'kickstart.plugins.minimap',
 
   require 'kickstart.plugins.golang',
+
+  require 'kickstart.plugins.signature',
+
+  require 'kickstart.plugins.preview',
+
+  require 'kickstart.plugins.codeium',
 }, {
   ui = {
 

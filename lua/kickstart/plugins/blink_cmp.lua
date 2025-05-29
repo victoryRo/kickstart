@@ -97,7 +97,7 @@ return {
       fuzzy = { implementation = 'lua' },
 
       -- Muestra una ventana de ayuda de firma mientras escribe argumentos para una función
-      signature = { enabled = true },
+      signature = { enabled = false },
     },
   },
 }
