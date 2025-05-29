@@ -10,6 +10,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.theme',
 
+  require 'kickstart.plugins.treesitter',
+
   require 'kickstart.plugins.neo_tree',
 
   require 'kickstart.plugins.git_signs',
@@ -27,6 +29,14 @@ require('lazy').setup({
   require 'kickstart.plugins.todo_comments',
 
   require 'kickstart.plugins.mini',
+
+  require 'kickstart.plugins.indent_line',
+
+  require 'kickstart.plugins.lint',
+
+  require 'kickstart.plugins.autopairs_rainbow',
+
+  require 'kickstart.plugins.minimap',
 }, {
   ui = {
 
