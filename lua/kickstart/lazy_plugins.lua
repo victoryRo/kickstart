@@ -45,6 +45,10 @@ require('lazy').setup({
   require 'kickstart.plugins.preview',
 
   require 'kickstart.plugins.codeium',
+
+  require 'kickstart.plugins.term',
+
+  require 'kickstart.plugins.outline',
 }, {
   ui = {
 

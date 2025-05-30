@@ -1,8 +1,7 @@
 --
 -- Aquí hay un ejemplo más avanzado donde pasamos opciones de configuración a `gitsigns.nvim`.
--- Consulta `:help gitsigns` para comprender la función de las claves de configuración.
-
 return {
+
   {
     'lewis6991/gitsigns.nvim',
     opts = {
