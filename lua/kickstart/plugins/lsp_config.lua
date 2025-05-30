@@ -83,40 +83,40 @@ return {
 
           -- Cambie el nombre de la variable bajo el cursor.
           -- La mayoría de los servidores de idiomas admiten el cambio de nombre entre archivos, etc.
-          map('<leader>lr', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>lr', vim.lsp.buf.rename, 'Renombrar')
 
           -- Ejecutar una acción de código; normalmente,
           -- el cursor debe estar sobre un error o una sugerencia de su LSP para que esto se active.
-          map('<leader>la', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
+          map('<leader>la', vim.lsp.buf.code_action, 'Codido de accion', { 'n', 'x' })
 
           -- Encuentre referencias para la palabra bajo el cursor.
-          map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          map('<leader>lr', require('telescope.builtin').lsp_references, 'Ver Referencias')
 
           -- Salta a la implementación de la palabra bajo el cursor.
           -- Útil cuando tu lenguaje tiene formas de declarar tipos sin una implementación real.
-          map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('<leader>li', require('telescope.builtin').lsp_implementations, 'Ir a Implementacion')
 
           -- Salta a la definición de la palabra bajo el cursor.
           -- Aquí es donde se declaró por primera vez una variable, o donde se definió una función, etc.
           -- Para retroceder, presione <C-t>.
-          map('<leader>ld', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('<leader>ld', require('telescope.builtin').lsp_definitions, 'Ir a Definicion')
 
           -- WARN: Esto no es Goto Definición, es Goto Declaración.
           -- Por ejemplo, en C, esto te llevaría al encabezado.
-          map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          map('grD', vim.lsp.buf.declaration, 'Ir a Declaracion')
 
           -- Búsqueda difusa de todos los símbolos en el documento actual.
           -- Los símbolos son elementos como variables, funciones, tipos, etc.
-          map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
+          map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Abrir Símbolos')
 
           -- Búsqueda difusa de todos los símbolos en su espacio de trabajo actual.
           -- Similar a los símbolos de documento, excepto que busca en todo el proyecto.
-          map('<leader>ls', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+          map('<leader>lw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Símbolos de espacio de trabajo')
 
           -- Salta al tipo de la palabra bajo el cursor.
           -- Útil cuando no estás seguro de qué tipo es una variable
           -- y quieres ver la definición de su *tipo*, no dónde se *definió*.
-          map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
+          map('<leader>lt', require('telescope.builtin').lsp_type_definitions, 'Ir definicion de tipo')
 
           -- Esta función resuelve una diferencia entre neovim nightly (versión 0.11) y estable (versión 0.10)
           ---@param client vim.lsp.Client
@@ -165,11 +165,11 @@ return {
           -- si el servidor de lenguaje que utiliza las admite.
           --
           -- Esto puede ser indeseado, ya que desplazan parte de su código.
-          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-            map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, '[T]oggle Inlay [H]ints')
-          end
+          -- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+          --   map('<leader>th', function()
+          --     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+          --   end, '[T]oggle Inlay [H]ints')
+          -- end
         end,
       })
 

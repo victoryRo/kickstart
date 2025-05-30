@@ -49,6 +49,8 @@ require('lazy').setup({
   require 'kickstart.plugins.term',
 
   require 'kickstart.plugins.outline',
+
+  require 'kickstart.plugins.buffer',
 }, {
   ui = {
 

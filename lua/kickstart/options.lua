@@ -75,6 +75,9 @@ vim.o.showtabline = 4 -- Mostrar siempre la línea tabline
 vim.o.tabstop = 4 -- número de espacio en una pestaña
 vim.o.background = 'dark'
 
+-- lee los gui valores de color hexadecimales de varios grupos destacados.
+vim.opt.termguicolors = true
+
 --
 --
 -- ------------------------------------------------------------- ||

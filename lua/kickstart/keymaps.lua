@@ -42,8 +42,15 @@ vim.keymap.set('n', 'th', ':ToggleTerm direction=horizontal size=15 name=Horizon
 vim.keymap.set('n', 'tb', ':ToggleTerm direction=tab size=20 name=Tab<CR>', { desc = 'Terminal tab' })
 vim.keymap.set('n', 'tf', ':ToggleTerm direction=float size=50 name=Flotante<CR>', { desc = 'Terminal flotante' })
 
+-- BUFFERLINE
+vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { desc = 'Buffer previo' })
+vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>', { desc = 'Buffer siguiente' })
+vim.keymap.set('n', '<leader>bt', ':BufferLineCloseOthers<CR>', { desc = 'Buffer cerrar todos excepto el actual' })
+vim.keymap.set('n', '<leader>bl', ':BufferLineCloseLeft<CR>', { desc = 'Buffer cerrar a la izquierda' })
+vim.keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { desc = 'Buffer cerrar a la derecha' })
+
 -- Diagnostico Mapas de teclas
-vim.keymap.set('n', '<leader>i', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- vim.keymap.set('n', '<leader>i', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')

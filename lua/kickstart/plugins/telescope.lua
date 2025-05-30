@@ -67,16 +67,16 @@ return {
 
       -- Consultar `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
-      vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]buscar ayuda' })
-      vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]buscar [K]eymaps' })
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]buscar [A]rchivos' })
-      vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]buscar [S]seleccionar Telescope' })
-      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]buscar [P]alabra archivo actual' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]busqueda por [G]rep' })
-      vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]buscar [D]iagnostico' })
-      vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]buscar [R]esumen' })
-      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]buscar archivos recientes ("." para repetir)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Encontrar buffers existentes' })
+      vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Buscar ayuda' })
+      vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Buscar keymaps' })
+      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Buscar archivos' })
+      vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Seleccionar Telescope' })
+      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Buscar palabra archivo actual' })
+      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Busqueda por Grep' })
+      vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Buscar diagnostico' })
+      vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Buscar resumen' })
+      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Buscar archivos recientes ("." para repetir)' })
+      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = 'Encontrar buffers existentes' })
 
       -- Ejemplo ligeramente avanzado de anulación del comportamiento y tema predeterminados
       vim.keymap.set('n', '<leader>/', function()
@@ -85,7 +85,7 @@ return {
           winblend = 10,
           previewer = false,
         })
-      end, { desc = '[/] Búsqueda difusa en el búfer actual' })
+      end, { desc = 'Búsqueda difusa en el búfer actual' })
 
       -- También es posible pasar opciones de configuración adicionales.
       --  Consultar `:help telescope.builtin.live_grep()` para obtener información sobre claves específicas
@@ -94,12 +94,12 @@ return {
           grep_open_files = true,
           prompt_title = 'Live Grep en archivos abiertos',
         }
-      end, { desc = '[S]buscar [/] en archivos abiertos' })
+      end, { desc = 'Buscar en archivos abiertos' })
 
       -- Acceso directo para buscar sus archivos de configuración de Neovim
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
-      end, { desc = '[S]buscar [N]eovim archivos' })
+      end, { desc = 'Buscar archivos Neovim' })
     end,
   },
 }

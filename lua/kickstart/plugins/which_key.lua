@@ -58,9 +58,12 @@ return {
 
       -- Documentar las key existentes
       spec = {
-        { '<leader>s', group = '[S]buscar' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>s', group = ' Buscar' },
+        { '<leader>b', group = ' Buffers' },
+        { '<leader>m', group = ' Mapa' },
+        { '<leader>l', group = ' LSP' },
+        { '<leader>t', group = ' Toggle' },
+        { '<leader>g', group = ' Git' },
       },
     },
   },
