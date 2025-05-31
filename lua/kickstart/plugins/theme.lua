@@ -44,7 +44,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      -- vim.cmd.colorscheme 'onenord'
+      vim.cmd.colorscheme 'onenord'
     end,
   },
 
@@ -57,7 +57,7 @@ return {
       require('onedark').setup {
         style = 'darker', -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
       }
-      vim.cmd.colorscheme 'onedark'
+      -- vim.cmd.colorscheme 'onedark'
     end,
   },
 }

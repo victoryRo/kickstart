@@ -67,16 +67,16 @@ return {
 
       -- Consultar `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
-      vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Buscar ayuda' })
-      vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Buscar keymaps' })
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Buscar archivos' })
-      vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Seleccionar Telescope' })
-      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Buscar palabra archivo actual' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Busqueda por Grep' })
-      vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Buscar diagnostico' })
-      vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Buscar resumen' })
-      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Buscar archivos recientes ("." para repetir)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = 'Encontrar buffers existentes' })
+      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Buscar ayuda' })
+      vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Buscar keymaps' })
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Buscar archivos' })
+      vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = 'Seleccionar Telescope' })
+      vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Buscar palabra archivo actual' })
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Busqueda por Grep' })
+      vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Buscar diagnostico' })
+      vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Buscar resumen' })
+      vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'Buscar archivos recientes ("." para repetir)' })
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Encontrar buffers existentes' })
 
       -- Ejemplo ligeramente avanzado de anulación del comportamiento y tema predeterminados
       vim.keymap.set('n', '<leader>/', function()
@@ -89,7 +89,7 @@ return {
 
       -- También es posible pasar opciones de configuración adicionales.
       --  Consultar `:help telescope.builtin.live_grep()` para obtener información sobre claves específicas
-      vim.keymap.set('n', '<leader>s/', function()
+      vim.keymap.set('n', '<leader>f/', function()
         builtin.live_grep {
           grep_open_files = true,
           prompt_title = 'Live Grep en archivos abiertos',
@@ -97,7 +97,7 @@ return {
       end, { desc = 'Buscar en archivos abiertos' })
 
       -- Acceso directo para buscar sus archivos de configuración de Neovim
-      vim.keymap.set('n', '<leader>sn', function()
+      vim.keymap.set('n', '<leader>fn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = 'Buscar archivos Neovim' })
     end,

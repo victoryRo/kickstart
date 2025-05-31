@@ -19,7 +19,7 @@ vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Escribir' })
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Cerrar' })
 
 -- ---- DIVIDIR VENTANAS
-vim.keymap.set('n', '<leader>a', ':split<CR>', { desc = 'Ventana horizontal' })
+vim.keymap.set('n', '<leader>h', ':split<CR>', { desc = 'Ventana horizontal' })
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>', { desc = 'Ventana vertical' })
 
 -- ---- MOVER VENTANAS

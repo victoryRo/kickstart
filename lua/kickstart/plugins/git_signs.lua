@@ -43,17 +43,16 @@ return {
         -- visual mode
         map('v', '<leader>gs', function()
           gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, { desc = 'git [s]tage hunk' })
+        end, { desc = 'Porcion al stage' })
         map('v', '<leader>gr', function()
           gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, { desc = 'git [r]eset hunk' })
+        end, { desc = 'Restablecer porcion' })
 
         -- normal mode
-        map('n', '<leader>gs', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
-        map('n', '<leader>gs', gitsigns.stage_buffer, { desc = 'Deshacer buffer' })
-        map('n', '<leader>gu', gitsigns.stage_hunk, { desc = 'Deshacer el hunk' })
-        map('n', '<leader>gr', gitsigns.reset_hunk, { desc = 'Restablecer hunk' })
+        map('n', '<leader>gs', gitsigns.stage_buffer, { desc = 'Buffer al stage' })
         map('n', '<leader>gR', gitsigns.reset_buffer, { desc = 'Restablecer buffer' })
+        map('n', '<leader>gu', gitsigns.stage_hunk, { desc = 'Porcion al stage' })
+        map('n', '<leader>gr', gitsigns.reset_hunk, { desc = 'Restablecer porcion' })
         map('n', '<leader>gp', gitsigns.preview_hunk, { desc = 'Previo hunk' })
         map('n', '<leader>gb', gitsigns.blame_line, { desc = 'Registro de commit' })
         map('n', '<leader>gd', gitsigns.diffthis, { desc = 'Diferencia buffer actual' })
@@ -61,8 +60,8 @@ return {
           gitsigns.diffthis '@'
         end, { desc = 'Diferencias con el ultimo commit' })
         -- Toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Mostrar linea de registro' })
-        map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = 'Mostrar cambios eliminados' })
+        map('n', '<leader>gl', gitsigns.toggle_current_line_blame, { desc = 'Mostrar linea de registro' })
+        map('n', '<leader>gc', gitsigns.preview_hunk_inline, { desc = 'Mostrar cambios eliminados' })
       end,
     },
   },

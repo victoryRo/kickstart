@@ -58,7 +58,7 @@ return {
 
       -- Documentar las key existentes
       spec = {
-        { '<leader>s', group = ' Buscar' },
+        { '<leader>f', group = ' Buscar' },
         { '<leader>b', group = ' Buffers' },
         { '<leader>m', group = ' Mapa' },
         { '<leader>l', group = ' LSP' },

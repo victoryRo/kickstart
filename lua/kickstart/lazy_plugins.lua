@@ -51,6 +51,8 @@ require('lazy').setup({
   require 'kickstart.plugins.outline',
 
   require 'kickstart.plugins.buffer',
+
+  require 'kickstart.plugins.color_full_menu',
 }, {
   ui = {
 

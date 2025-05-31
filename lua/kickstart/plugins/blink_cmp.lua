@@ -40,19 +40,6 @@ return {
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        -- 'predeterminado' (recomendado) para asignaciones similares a las compleciones integradas
-        -- <c-y> para aceptar ([y]es) la finalizacion.
-        -- Esto se importará automáticamente si su LSP lo admite.
-        -- Esto expandirá los fragmentos si el LSP envió uno.
-        --   'super-tab' para aceptar la tabulación.
-        --   'enter' para aceptar la entrada.
-        --   'none' para no asignar.
-
-        -- Para comprender por qué se recomienda el ajuste predeterminado,
-        -- deberá leer `:help ins-completion`.
-
-        -- No, en serio. Por favor, lee `:help ins-completion`, ¡es realmente bueno!
-
         -- Todos los ajustes preestablecidos tienen las siguientes asignaciones:
         --   <tab>/<s-tab>: mover a la derecha/izquierda de la expansión del fragmento
         --   <c-space>: abrir el menú o abrir documentos si ya están abiertos
@@ -61,7 +48,15 @@ return {
         --   <c-k>: activar o desactivar la ayuda de firma
 
         -- Consulte :h blink-cmp-config-keymap para definir tu propio mapa de teclas
-        preset = 'default',
+        preset = 'none',
+
+        ['<C-e>'] = { 'hide' },
+        ['<C-j>'] = { 'select_and_accept' },
+        ['<Tab>'] = { 'select_next', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'fallback' },
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+        ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
 
         -- Para mapas de teclas de Luasnip más avanzados (por ejemplo, selección de nodos de elección, expansión),
         -- consulte:  https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -76,13 +71,93 @@ return {
       completion = {
         -- De forma predeterminada, puede presionar `<c-space>` para mostrar la documentación.
         -- Opcionalmente, configure `auto_show = true` para mostrar la documentación después de un retraso.
-        documentation = { auto_show = true, auto_show_delay_ms = 500 },
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 500,
+          window = {
+            border = 'single',
+            winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+          },
+        },
+
+        menu = {
+          border = 'single',
+          winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+
+          draw = {
+            -- No necesitamos label_description ahora porque label y label_description
+            -- ya están combinados en label por colorful-menu.nvim.
+            columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+            components = {
+              label = {
+                width = { fill = true, max = 60 },
+                text = function(ctx)
+                  local highlights_info = require('colorful-menu').blink_highlights(ctx)
+                  if highlights_info ~= nil then
+                    -- O quieres agregar más elementos a la etiqueta
+                    return highlights_info.label
+                  else
+                    return ctx.label
+                  end
+                end,
+                highlight = function(ctx)
+                  local highlights = {}
+                  local highlights_info = require('colorful-menu').blink_highlights(ctx)
+                  if highlights_info ~= nil then
+                    highlights = highlights_info.highlights
+                  end
+                  for _, idx in ipairs(ctx.label_matched_indices) do
+                    table.insert(highlights, { idx, idx + 1, group = 'BlinkCmpLabelMatch' })
+                  end
+                  -- Hacer otra cosa
+                  return highlights
+                end,
+              },
+            },
+          },
+        },
       },
 
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+
+          -- Recetas
+          -- Mantener la primera letra en mayúscula en la fuente del búfer
+          buffer = {
+            -- mantener mayúsculas y minúsculas del primer carácter
+            transform_items = function(a, items)
+              local keyword = a.get_keyword()
+              local correct, case
+              if keyword:match '^%l' then
+                correct = '^%u%l+$'
+                case = string.lower
+              elseif keyword:match '^%u' then
+                correct = '^%l+$'
+                case = string.upper
+              else
+                return items
+              end
+
+              -- evitar duplicados de las correcciones
+              local seen = {}
+              local out = {}
+              for _, item in ipairs(items) do
+                local raw = item.insertText
+                if raw:match(correct) then
+                  local text = case(raw:sub(1, 1)) .. raw:sub(2)
+                  item.insertText = text
+                  item.label = text
+                end
+                if not seen[item.insertText] then
+                  seen[item.insertText] = true
+                  table.insert(out, item)
+                end
+              end
+              return out
+            end,
+          },
         },
       },
 
