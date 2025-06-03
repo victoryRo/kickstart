@@ -10,11 +10,11 @@ require('lazy').setup({
 
   require 'kickstart.plugins.theme',
 
-  require 'kickstart.plugins.treesitter',
+  -- require 'kickstart.plugins.treesitter',
 
   require 'kickstart.plugins.neo_tree',
 
-  require 'kickstart.plugins.git_signs',
+  -- require 'kickstart.plugins.git_signs',
 
   require 'kickstart.plugins.which_key',
 
@@ -22,7 +22,7 @@ require('lazy').setup({
 
   require 'kickstart.plugins.lsp_config',
 
-  require 'kickstart.plugins.conform',
+  -- require 'kickstart.plugins.conform',
 
   require 'kickstart.plugins.blink_cmp',
 
@@ -30,29 +30,29 @@ require('lazy').setup({
 
   require 'kickstart.plugins.mini',
 
-  require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.indent_line',
 
-  require 'kickstart.plugins.lint',
+  -- require 'kickstart.plugins.lint',
 
-  require 'kickstart.plugins.autopairs_rainbow',
-
-  require 'kickstart.plugins.minimap',
-
-  require 'kickstart.plugins.golang',
-
-  require 'kickstart.plugins.signature',
-
-  require 'kickstart.plugins.preview',
-
-  require 'kickstart.plugins.codeium',
-
-  require 'kickstart.plugins.term',
-
-  require 'kickstart.plugins.outline',
-
-  require 'kickstart.plugins.buffer',
-
-  require 'kickstart.plugins.color_full_menu',
+  -- require 'kickstart.plugins.autopairs_rainbow',
+  --
+  -- require 'kickstart.plugins.minimap',
+  --
+  -- require 'kickstart.plugins.golang',
+  --
+  -- require 'kickstart.plugins.signature',
+  --
+  -- require 'kickstart.plugins.preview',
+  --
+  -- require 'kickstart.plugins.codeium',
+  --
+  -- require 'kickstart.plugins.term',
+  --
+  -- require 'kickstart.plugins.outline',
+  --
+  -- require 'kickstart.plugins.buffer',
+  --
+  -- require 'kickstart.plugins.color_full_menu',
 }, {
   ui = {
 

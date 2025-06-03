@@ -32,7 +32,7 @@ return {
       require('onedark').setup {
         style = 'darker', -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
       }
-      -- vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'onedark'
     end,
   },
 
@@ -41,7 +41,7 @@ return {
     'cpea2506/one_monokai.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'one_monokai'
+      -- vim.cmd.colorscheme 'one_monokai'
     end,
   },
 

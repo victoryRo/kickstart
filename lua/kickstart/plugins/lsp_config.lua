@@ -83,7 +83,7 @@ return {
 
           -- Cambie el nombre de la variable bajo el cursor.
           -- La mayoría de los servidores de idiomas admiten el cambio de nombre entre archivos, etc.
-          map('<leader>lr', vim.lsp.buf.rename, 'Renombrar')
+          map('<leader>ln', vim.lsp.buf.rename, 'Renombrar')
 
           -- Ejecutar una acción de código; normalmente,
           -- el cursor debe estar sobre un error o una sugerencia de su LSP para que esto se active.
@@ -263,25 +263,25 @@ return {
       -- para que estén disponibles desde Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'gopls',
-        'css-lsp',
-        'html-lsp',
-        'json-lsp',
-        'emmet-ls',
-        'lua-language-server',
-        'dockerfile-language-server',
-
-        -- install formatea codigolua
-        'stylua',
-
-        -- install debuggers
-
-        -- install linters
-        'kube-linter',
-        'selene',
-
-        -- install any other package
-        'tree-sitter-cli',
+        -- 'gopls',
+        -- 'css-lsp',
+        -- 'html-lsp',
+        -- 'json-lsp',
+        -- 'emmet-ls',
+        -- 'lua-language-server',
+        -- 'dockerfile-language-server',
+        --
+        -- -- install formatea codigolua
+        -- 'stylua',
+        --
+        -- -- install debuggers
+        --
+        -- -- install linters
+        -- 'kube-linter',
+        -- 'selene',
+        --
+        -- -- install any other package
+        -- 'tree-sitter-cli',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

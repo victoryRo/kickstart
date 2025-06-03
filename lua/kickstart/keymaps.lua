@@ -45,7 +45,7 @@ vim.keymap.set('n', 'tf', ':ToggleTerm direction=float size=50 name=Flotante<CR>
 -- BUFFERLINE
 vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { desc = 'Buffer previo' })
 vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>', { desc = 'Buffer siguiente' })
-vim.keymap.set('n', '<leader>bt', ':BufferLineCloseOthers<CR>', { desc = 'Buffer cerrar todos excepto el actual' })
+vim.keymap.set('n', '<leader>bc', ':BufferLineCloseOthers<CR>', { desc = 'Buffer cerrar todos excepto el actual' })
 vim.keymap.set('n', '<leader>bl', ':BufferLineCloseLeft<CR>', { desc = 'Buffer cerrar a la izquierda' })
 vim.keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { desc = 'Buffer cerrar a la derecha' })
 
