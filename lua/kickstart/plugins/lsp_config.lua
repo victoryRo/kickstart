@@ -263,25 +263,25 @@ return {
       -- para que estén disponibles desde Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        -- 'gopls',
-        -- 'css-lsp',
-        -- 'html-lsp',
-        -- 'json-lsp',
-        -- 'emmet-ls',
-        -- 'lua-language-server',
-        -- 'dockerfile-language-server',
-        --
+        'gopls',
+        'css-lsp',
+        'html-lsp',
+        'json-lsp',
+        'emmet-ls',
+        'lua-language-server',
+        'dockerfile-language-server',
+
         -- -- install formatea codigolua
-        -- 'stylua',
-        --
+        'stylua',
+
         -- -- install debuggers
-        --
+
         -- -- install linters
-        -- 'kube-linter',
-        -- 'selene',
-        --
+        'kube-linter',
+        'selene',
+
         -- -- install any other package
-        -- 'tree-sitter-cli',
+        'tree-sitter-cli',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
