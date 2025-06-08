@@ -57,7 +57,11 @@ require 'kickstart.lazy_bootstrap'
 -- ---- Configurar e instalar plugins ---- ||
 require 'kickstart.lazy_plugins'
 
------------------------------------------------------- nvim-go
+-- ------ Conocer el estado de Neovim ------ ||
+require 'kickstart.health'
+
+------------------------------------------- nvim-go
+-- autocomand para nvim-go plugin
 
 local NvimGo = vim.api.nvim_create_augroup('NvimGo', {
   clear = true,
@@ -68,14 +72,15 @@ vim.api.nvim_create_autocmd({ 'User' }, {
   command = 'wincmd p',
 })
 
--------------------------------- disable some default providers
+---------------------------------------------------|
+-- deshabilitar algunos proveedores predeterminados
+-- cuando verificamos el estado de neovim
 
 for _, provider in ipairs { 'node', 'perl', 'python3', 'ruby' } do
   vim.g['loaded_' .. provider .. '_provider'] = 0
 end
 
---------------------------------------------------------------|
---
---
+---------------------------------------------------|
+
 -- ------------------------------------------------------------- ||
 --
