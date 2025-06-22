@@ -49,18 +49,19 @@ vim.keymap.set('n', '<leader>bc', ':BufferLineCloseOthers<CR>', { desc = 'Buffer
 vim.keymap.set('n', '<leader>bl', ':BufferLineCloseLeft<CR>', { desc = 'Buffer cerrar a la izquierda' })
 vim.keymap.set('n', '<leader>br', ':BufferLineCloseRight<CR>', { desc = 'Buffer cerrar a la derecha' })
 
+-- LIVE SERVER
+vim.keymap.set('n', 'sl', ':LiveServerStart<CR>', { desc = 'Servidor corriendo ...' })
+vim.keymap.set('n', 'ss', ':LiveServerStop<CR>', { desc = 'Servidor detenido ...' })
+
 -- Diagnostico Mapas de teclas
 -- vim.keymap.set('n', '<leader>i', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
 -- Combinaciones de teclas para facilitar la navegación dividida.
 --  Use CTRL+<hjkl> to switch between windows
-
 -- Consulte `:help wincmd` para obtener una lista de todos los comandos de ventana
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Mover el foco a la ventana izquierda' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Mover el foco a la ventana izquierda' })

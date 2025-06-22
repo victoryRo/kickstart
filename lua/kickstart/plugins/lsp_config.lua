@@ -266,6 +266,7 @@ return {
         'gopls',
         'css-lsp',
         'html-lsp',
+        'yamlls',
         'json-lsp',
         'emmet-ls',
         'lua-language-server',

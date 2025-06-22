@@ -51,6 +51,8 @@ require('lazy').setup({
   require 'kickstart.plugins.buffer',
 
   require 'kickstart.plugins.color_full_menu',
+
+  require 'kickstart.plugins.live_server',
 }, {
   ui = {
 
